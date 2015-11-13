@@ -1,24 +1,27 @@
 package pt.bucho.pingpong;
 
-public class Message {
+import java.io.Serializable;
 
-	private String content;
+public class Message implements Serializable {
 
-	public Message(String msg){
+	private static final long serialVersionUID = 5898308067068987706L;
+	private final String content;
+
+	public Message() {
+		content = "null";
+	}
+
+	public Message(String msg) {
 		content = msg;
 	}
-	
+
 	public String getContent() {
 		return content;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
-	}
-	
 	@Override
-	public String toString(){
+	public String toString() {
 		return getContent();
 	}
-	
+
 }
